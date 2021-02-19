@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Clock</title>
+    <link rel="stylesheet" type="text/css" href="Analog.css">
+</head>
+<body>
+    <marquee style="background-color: rgb(31, 30, 26); height:50px; display: flex;align-items: center;"><h1 style="color:White">Analog Clock For&nbsp;<span style="color:palevioletred">Rasilaben Mehta</span> </h1></marquee>
+    <div class="container">
+    <div class="clock">
+        <div class="hr" id="hr"></div>
+        <div class="min" id="min"></div>
+        <div class="sec" id="sec"></div>
+    </div>
+    </div>
+
+              <!-- JavaScript Program -->
+    <script>
+       
+        let hour= document.getElementById('hr');
+        let minute=document.getElementById('min');
+        let second=document.getElementById('sec');
+ 
+        setInterval(()=>{
+            let date=new Date();
+            let hr=date.getHours()*30;
+            let min=date.getMinutes()*6;
+            let sec=date.getSeconds()*6;
+
+            hour.style.transform=`rotateZ(${(hr)+(min/12)}deg)`;
+            minute.style.transform=`rotateZ(${min}deg)`;
+            second.style.transform=`rotateZ(${sec}deg)`;
+        })
+        </script>
+
+        <footer class="footer">Created By Sahil Gupta</footer>
+</body>
+</html>
